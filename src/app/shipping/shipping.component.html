@@ -1,0 +1,10 @@
+<h3>Shipping Prices</h3>
+
+<!-- 
+  Aktualisieren Sie die ShippingComponent-Vorlage, um die Versandarten und -preise mithilfe der asynchronen Pipe anzuzeigen.
+  Die Async-Pipe gibt den neuesten Wert aus einem Datenstrom zurück und tut dies für die Lebensdauer einer bestimmten Komponente. Wenn Angular diese Komponente zerstört, stoppt die Async-Pipe automatisch.
+-->
+<div class="shipping-item" *ngFor="let shipping of shippingCosts | async">
+  <span>{{ shipping.type }}</span>
+  <span>{{ shipping.price | currency}}</span>
+</div>
