@@ -11,3 +11,27 @@
   <span>{{ item.name }}</span>
   <span>{{ item.price | currency }}</span>
 </div>
+
+<!-- 
+  Verwenden Sie im Form-Tag eine ngSubmit-Ereignisbindung, um auf die Formularübermittlung zu lauschen, und rufen Sie die onSubmit()-Methode mit dem checkoutForm-Wert auf.
+ -->
+<form [formGroup]="checkoutForm" (ngSubmit)="onSubmit()">
+  <!--
+    Fügen Sie <input>-Felder für Name und Adresse hinzu, jedes mit einem formControlName-Attribut, das an die checkoutForm-Formularsteuerelemente für Name und Adresse zu ihren <input>-Feldern bindet.
+  -->
+  <div>
+    <label for="name"> Name </label>
+    <input id="name" type="text" formControlName="name" />
+  </div>
+
+  <div>
+    <label for="address"> Address </label>
+    <input id="address" type="text" formControlName="address" />
+  </div>
+
+  <!-- 
+    Fügen Sie am Ende von cart.component.html ein HTML-<form>-Element und eine Schaltfläche „Kaufen“ hinzu.
+  Verwenden Sie eine formGroup-Eigenschaftsbindung, um checkoutForm an das HTML-<form> zu binden.
+  -->
+  <button class="button" type="submit">Purchase</button>
+</form>
